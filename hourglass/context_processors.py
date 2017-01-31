@@ -24,3 +24,8 @@ def ethnio_screener_id(request):
 def help_email(request):
     '''Include HELP_EMAIL in all request contexts'''
     return {'HELP_EMAIL': settings.HELP_EMAIL}
+
+
+def non_prod_instance_name(request):
+    '''Include NON_PROD_INSTANCE_NAME in all request contexts'''
+    return {'NON_PROD_INSTANCE_NAME': settings.NON_PROD_INSTANCE_NAME}

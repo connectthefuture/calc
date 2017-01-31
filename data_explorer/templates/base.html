@@ -54,6 +54,14 @@
           <a href="#help-wanted">Help us improve.</a>
         </p>
       </div>
+      {% if NON_PROD_INSTANCE_NAME %}
+        <div class="container instance-message">
+          <p>
+            This is a {{ NON_PROD_INSTANCE_NAME }} version of CALC.
+            Please visit <a href="https://calc.gsa.gov">calc.gsa.gov</a> for the production site.
+          </p>
+        </div>
+      {% endif %}
     </div>
     <header>
       <div class="container">

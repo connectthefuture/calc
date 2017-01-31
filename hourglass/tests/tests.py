@@ -338,3 +338,9 @@ class ContextProcessorTests(DjangoTestCase):
         res = self.client.get('/')
         self.assertIn('HELP_EMAIL', res.context)
         self.assertEquals(res.context['HELP_EMAIL'], 'help@calc.com')
+
+    @override_settings(NON_PROD_INSTANCE_NAME='Staging')
+    def test_non_prod_instance_name_is_included(self):
+        res = self.client.get('/')
+        self.assertIn('NON_PROD_INSTANCE_NAME', res.context)
+        self.assertEquals(res.context['NON_PROD_INSTANCE_NAME'], 'Staging')

@@ -68,6 +68,8 @@ GA_TRACKING_ID = os.environ.get('GA_TRACKING_ID', '')
 
 ETHNIO_SCREENER_ID = os.environ.get('ETHNIO_SCREENER_ID')
 
+NON_PROD_INSTANCE_NAME = os.environ.get('NON_PROD_INSTANCE_NAME')
+
 TEMPLATES = [{
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
     'DIRS': [
@@ -81,6 +83,7 @@ TEMPLATES = [{
             'hourglass.context_processors.google_analytics_tracking_id',
             'hourglass.context_processors.ethnio_screener_id',
             'hourglass.context_processors.help_email',
+            'hourglass.context_processors.non_prod_instance_name',
             'frontend.context_processors.is_safe_mode_enabled',
             "django.contrib.auth.context_processors.auth",
             "django.template.context_processors.debug",
